@@ -52,20 +52,22 @@ type identicon struct {
 	rows   int
 	cols   int
 	h      hash.Hash64
+	maxX   int
+	maxY   int
 }
 
 const xborder = 35
 const yborder = 35
-const maxX = 420
-const maxY = 420
 
 // New5x5 creates a new 5-by-5 identicon renderer using 'key' as the hash salt
-func New5x5(key []byte) Renderer {
+func New5x5(key []byte, size int) Renderer {
 	return &identicon{
 		sqSize: 70,
 		rows:   5,
 		cols:   5,
 		h:      siphash.New(key),
+		maxX:   size,
+		maxY:   size,
 	}
 }
 
@@ -76,6 +78,8 @@ func New7x7(key []byte) Renderer {
 		rows:   7,
 		cols:   7,
 		h:      siphash.New(key),
+		maxX:   size,
+		maxY:   size,
 	}
 }
 
@@ -93,7 +97,7 @@ func (icon *identicon) Render(data []byte) []byte {
 	}
 	h >>= 24
 
-	img := image.NewPaletted(image.Rect(0, 0, maxX, maxY), color.Palette{color.NRGBA{0xf0, 0xf0, 0xf0, 0xff}, nrgba})
+	img := image.NewPaletted(image.Rect(0, 0, icon.maxX, icon.maxY), color.Palette{color.NRGBA{0xf0, 0xf0, 0xf0, 0xff}, nrgba})
 
 	sqx := 0
 	sqy := 0
