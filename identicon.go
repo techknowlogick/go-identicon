@@ -72,7 +72,7 @@ func New5x5(key []byte, size int) Renderer {
 }
 
 // New7x7 creates a new 7-by-7 identicon renderer using 'key' as the hash salt
-func New7x7(key []byte) Renderer {
+func New7x7(key []byte, size int) Renderer {
 	return &identicon{
 		sqSize: 50,
 		rows:   7,
