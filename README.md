@@ -4,6 +4,6 @@ This program implements a simple [identicon](https://en.wikipedia.org/wiki/Ident
 
 There is a demo webservice included.  Try:
 
-    go run demo/main.go
+    go run examples/example.go
 
-and then visit http://localhost:8080/dgryski.png
+and then visit http://localhost:8080/techknowlogick.png
