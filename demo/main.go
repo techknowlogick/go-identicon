@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/dgryski/go-identicon"
+	"src.techknowlogick.com/identicon"
 	"log"
 	"net/http"
 	"os"
