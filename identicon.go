@@ -28,7 +28,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /*
 For more information, see https://en.wikipedia.org/wiki/Identicon and https://github.com/blog/1586-identicons
 */
-package identicon
+package identicon // import "src.techknowlogick.com/identicon"
 
 import (
 	"bytes"
